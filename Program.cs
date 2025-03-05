@@ -112,7 +112,7 @@ namespace Napiza_Project
             Console.WriteLine($"1. {s1}");
             Console.WriteLine($"2. {s2}");
             Console.WriteLine($"3. {s3}");
-            Console.WriteLine($"{Environment.NewLine}");
+            Console.Write($"{Environment.NewLine}");
             Console.WriteLine("Do you want to select again?");
         }
     }
