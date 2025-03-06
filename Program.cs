@@ -30,7 +30,7 @@ namespace Napiza_Project
                                   };
                 Console.WriteLine($"Hello {userName}!, How are you feeling today?");
 
-                while (true)
+                while (userName.Contains(userName))
                 {
                     foreach (string emoji in emojis)
                     {
