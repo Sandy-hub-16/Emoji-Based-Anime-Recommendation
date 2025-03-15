@@ -5,7 +5,15 @@ namespace Napiza_Project
 {
     internal class Program
     {
-
+        static string[] emojis = { "[A]Like",
+                            "[B]Heart",
+                            "[C]Laugh",
+                            "[D]Wow",
+                            "[E]Sad",
+                            "[F]Angry",
+                            "[G]RANDOM",
+                            "\n[X] EXIT"
+                            };
         static void Main(string[] args)
         {
             Console.WriteLine("Emoji-based Anime Series Recommendation");
@@ -13,107 +21,106 @@ namespace Napiza_Project
 
             Console.WriteLine();
 
-            Console.Write("Enter Username : ");
-            string userName = Console.ReadLine();
+            string userName;
 
-
-            if (!string.IsNullOrEmpty(userName))
+            do
             {
-                string[] emojis = { "[A]Like",
-                                    "[B]Heart",
-                                    "[C]Laugh",
-                                    "[D]Wow",
-                                    "[E]Sad",
-                                    "[F]Angry",
-                                    "[G]RANDOM",
-                                    "\n[X] EXIT"
-                                  };
-                Console.WriteLine($"Hello {userName}!, How are you feeling today?");
+                Console.Write("Enter Username : ");
+                userName = Console.ReadLine();
 
-                while (userName.Contains(userName))
+                if (string.IsNullOrEmpty(userName))
                 {
-                    foreach (string emoji in emojis)
-                    {
+                    Console.WriteLine("Username cannot be empty. Please Try Again.");
+                }
+            } while (string.IsNullOrEmpty(userName));
 
-                        Console.WriteLine(emoji);
-                    }
+            Console.WriteLine($"Konnichiwa, {userName}!, How are you feeling today?");
 
-                    string userInput = Console.ReadLine();
-
-                    string[] input = { "a", "b", "c", "d", "e", "f", "g", "x" };
-
-
-                    if (!string.IsNullOrEmpty(userInput))
-                    {
-                        if (input.Contains(userInput.ToLower()))
-                        {
-                            switch (userInput.ToString().ToLower())
-                            {
-                                case "a":
-                                    AnimeSeriesList("Like", "One Piece", "Naruto Shippuden", "Dragonball");
-                                    break;
-                                case "b":
-                                    AnimeSeriesList("Heart", "Kimi Ni Todoke", "Kaguya-sama: Love Is War", "Fruits Basket");
-                                    break;
-                                case "c":
-                                    AnimeSeriesList("Laugh", "Mashle: Magic And Muscles", "Dandadan", "KonoSuba");
-                                    break;
-                                case "d":
-                                    AnimeSeriesList("Wow", "Solo Leveling", "Frieren: Beyond Journey's End", "Jujutsu Kaisen");
-                                    break;
-                                case "e":
-                                    AnimeSeriesList("Sad", "A Silent Voice", "Your Lie in April", "Anohana: The Flower We Saw That Day");
-                                    break;
-                                case "f":
-                                    AnimeSeriesList("Angry", "Attack on Titan", "One Punch Man", "Vinland Saga");
-                                    break;
-                                case "g":
-                                    AnimeSeriesList("Random", "Steins Gate", "Erased", "Black Clover");
-                                    break;
-
-                                default:
-                                    break;
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid Input");
-                            Console.WriteLine($"Try Again.{Environment.NewLine}Select only the available letters.");
-                            Console.WriteLine();
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Input cannot be empty.");
-                    }
+            DisplayEmoji();
+            
 
 
+            Console.Write("Enter Emoji : ");
+            string userInput = GetUserEmoji();
 
-
-                    if (userInput.ToString().ToLower() == "x")
-                    {
-                        Console.OutputEncoding = Encoding.UTF8;
-                        Console.WriteLine("Goodbye! See you in the next episode!");
+            while (userInput != "x".ToLower())
+            {
+                switch (userInput.ToLower())
+                {
+                    case "a":
+                        SetAnimeSeriesList("Like", "One Piece", "Naruto Shippuden", "Dragonball");
                         break;
-                    }
+                    case "b":
+                        SetAnimeSeriesList("Heart", "Kimi Ni Todoke", "Kaguya-sama: Love Is War", "Fruits Basket");
+                        break;
+                    case "c":
+                        SetAnimeSeriesList("Laugh", "Mashle: Magic And Muscles", "Dandadan", "KonoSuba");
+                        break;
+                    case "d":
+                        SetAnimeSeriesList("Wow", "Solo Leveling", "Frieren: Beyond Journey's End", "Jujutsu Kaisen");
+                        break;
+                    case "e":
+                        SetAnimeSeriesList("Sad", "A Silent Voice", "Your Lie in April", "Anohana: The Flower We Saw That Day");
+                        break;
+                    case "f":
+                        SetAnimeSeriesList("Angry", "Attack on Titan", "One Punch Man", "Vinland Saga");
+                        break;
+                    case "g":
+                        SetAnimeSeriesList("Random", "Steins Gate", "Erased", "Black Clover");
+                        break;
 
+                    default:
+                        Console.WriteLine("Please enter the existing letters only");
+                        break;
                 }
 
-            }
-            else
-            {
-                Console.WriteLine("Username cannot be Empty.");
-            }
-        }
+                DisplayEmoji();
+                userInput = GetUserEmoji();
 
-        public static void AnimeSeriesList(string emoji, string s1, string s2, string s3) // static >> no need to instantiate
+
+
+                if (userInput == "x".ToLower()) 
+                {
+                    Console.WriteLine("Goodbye! See you in the next episode!");
+                    break;
+                }
+
+
+            }
+             
+
+
+            }
+
+        public static void SetAnimeSeriesList(string emoji, string s1, string s2, string s3) // static >> no need to instantiate
         {
+            Console.WriteLine();
             Console.WriteLine($"Here are our Recommendations : ( {emoji} Emoji ) ");
             Console.WriteLine($"1. {s1}");
             Console.WriteLine($"2. {s2}");
             Console.WriteLine($"3. {s3}");
             Console.Write($"{Environment.NewLine}");
+            Console.WriteLine("************************************");
             Console.WriteLine("Do you want to select again?");
+
+        }
+
+        public static void DisplayEmoji()
+        {
+           
+            Console.WriteLine("Emojis : ");
+            foreach (string emoji in emojis)
+            {
+                Console.WriteLine(emoji);
+            }
+        }
+
+        public static string GetUserEmoji()
+        {
+            Console.Write("Enter Emoji : ");
+            string userInput = Console.ReadLine();
+
+            return userInput;
         }
     }
 }
