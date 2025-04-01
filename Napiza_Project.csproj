@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ClassLibrary1\**" />
+    <EmbeddedResource Remove="ClassLibrary1\**" />
+    <None Remove="ClassLibrary1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="ClassLibrary1\EBAR_BL.csproj" />
+  </ItemGroup>
+
 </Project>

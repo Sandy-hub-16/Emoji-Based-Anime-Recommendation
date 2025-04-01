@@ -1,21 +1,22 @@
 ﻿
 using System.Text;
+using EBAR_BL;
 
 namespace Napiza_Project
 {
     internal class Program
     {
         static string[] emojis = { "[A]Like",
-                            "[B]Heart",
-                            "[C]Laugh",
-                            "[D]Wow",
-                            "[E]Sad",
-                            "[F]Angry",
-                            "[G]RANDOM",
-                            "\n[X] EXIT"
+                                   "[B]Heart",
+                                   "[C]Laugh",
+                                   "[D]Wow",
+                                   "[E]Sad",
+                                   "[F]Angry",
+                                   "[G]RANDOM",
+                                "\n[X] EXIT"
                             };
         static void Main(string[] args)
-        {
+        { 
             Console.WriteLine("Emoji-based Anime Series Recommendation");
             Console.WriteLine("The Recommendation is limited to 3 only (temporary)");
 
@@ -28,7 +29,7 @@ namespace Napiza_Project
                 Console.Write("Enter Username : ");
                 userName = Console.ReadLine();
 
-                if (string.IsNullOrEmpty(userName))
+                if (EBARProcess.ValidateEmptyUserName(userName))
                 {
                     Console.WriteLine("Username cannot be empty. Please Try Again.");
                 }
@@ -40,7 +41,6 @@ namespace Napiza_Project
             
 
 
-            Console.Write("Enter Emoji : ");
             string userInput = GetUserEmoji();
 
             while (userInput != "x".ToLower())
@@ -92,13 +92,13 @@ namespace Napiza_Project
 
             }
 
-        public static void SetAnimeSeriesList(string emoji, string s1, string s2, string s3) // static >> no need to instantiate
+        public static void SetAnimeSeriesList(string emoji, string series1, string series2, string series3) // static >> no need to instantiate
         {
             Console.WriteLine();
             Console.WriteLine($"Here are our Recommendations : ( {emoji} Emoji ) ");
-            Console.WriteLine($"1. {s1}");
-            Console.WriteLine($"2. {s2}");
-            Console.WriteLine($"3. {s3}");
+            Console.WriteLine($"1. {series1}");
+            Console.WriteLine($"2. {series2}");
+            Console.WriteLine($"3. {series3}");
             Console.Write($"{Environment.NewLine}");
             Console.WriteLine("************************************");
             Console.WriteLine("Do you want to select again?");

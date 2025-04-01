@@ -1,0 +1,12 @@
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\bin\Debug\net8.0\EBAR_BL.deps.json
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\bin\Debug\net8.0\EBAR_BL.dll
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\bin\Debug\net8.0\EBAR_BL.pdb
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\EBAR_BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\EBAR_BL.AssemblyInfoInputs.cache
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\EBAR_BL.AssemblyInfo.cs
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\EBAR_BL.csproj.CoreCompileInputs.cache
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\EBAR_BL.sourcelink.json
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\EBAR_BL.dll
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\refint\EBAR_BL.dll
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\EBAR_BL.pdb
+C:\Users\Ostine\OneDrive\Documents\C#\repos\Napiza_Project\ClassLibrary1\obj\Debug\net8.0\ref\EBAR_BL.dll
